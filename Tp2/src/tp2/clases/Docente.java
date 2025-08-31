@@ -95,14 +95,22 @@ public class Docente extends Persona{
         this.telefono = telefono;
     }
 
-    public int calcularAntiguedad(){
-        return 1;
+    // Métodos sobrecargados
+    public int calcularAntiguedad() {
+        // Retorna años de antigüedad desde fechaInicioCargo hasta hoy
+        Date hoy = new Date();
+        long diff = hoy.getTime() - fechaInicioCargo.getTime();
+        return (int) (diff / (1000L * 60 * 60 * 24 * 365));
+    }
+
+    public int calcularAntiguedad(Date fechaReferencia) {
+        long diff = fechaReferencia.getTime() - fechaInicioCargo.getTime();
+        return (int) (diff / (1000L * 60 * 60 * 24 * 365));
     }
 
     @Override
     public String toString() {
         return "Docente{" + "legajo=" + legajo + ", especialida=" + especialida + ", fechaInicioCargo=" + fechaInicioCargo + '}';
     }
-    
     
 }

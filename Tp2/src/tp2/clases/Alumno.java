@@ -12,12 +12,11 @@ import java.util.List;
  *
  * @author mariano-ubuntu
  */
-public class Alumno extends Persona{
+public class Alumno extends Persona {
     
     private int legajo;
     private List<Calificacion> calificaciones;
 
-   
     public Alumno(int legajo, String nombre, String apellido, int dni, Date fechaNacimiento, String direccion, String telefono) {
         super(nombre, apellido, dni, fechaNacimiento, direccion, telefono);
         this.legajo = legajo;
@@ -88,10 +87,24 @@ public class Alumno extends Persona{
         this.telefono = telefono;
     }
 
+    // Métodos sobrecargados
+    public void agregarCalificacion(Calificacion calificacion) {
+        this.calificaciones.add(calificacion);
+    }
+
+    public void agregarCalificacion(double nota, String materia) {
+        Calificacion calif = new Calificacion(nota, materia);
+        this.calificaciones.add(calif);
+    }
+
+    public void agregarCalificacion(double nota) {
+        Calificacion calif = new Calificacion(nota, "General");
+        this.calificaciones.add(calif);
+    }
+
     @Override
     public String toString() {
         return "Alumno{" + "legajo=" + legajo + ", calificaciones=" + calificaciones + '}';
     }
-    
     
 }

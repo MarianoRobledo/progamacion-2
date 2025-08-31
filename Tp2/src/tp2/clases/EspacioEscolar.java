@@ -47,12 +47,14 @@ abstract class EspacioEscolar {
         this.habilitado = habilitado;
     }
     
+
     abstract void abrir();
-    
     abstract void cerrar();
-    
     abstract void limpiar();
-    
-    
+
+    // Polimorfismo: método para mostrar información
+    public String descripcion() {
+        return "Espacio escolar genérico: " + nombre;
+    }
     
 }

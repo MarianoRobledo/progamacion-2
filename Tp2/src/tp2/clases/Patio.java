@@ -8,7 +8,8 @@ package tp2.clases;
  *
  * @author mariano-ubuntu
  */
-public class Patio extends EspacioEscolar{
+public class Patio extends EspacioEscolar {
+
     private int superficie;
     private boolean tieneJuegos;
     private boolean tieneCanchaFutbol;
@@ -18,8 +19,6 @@ public class Patio extends EspacioEscolar{
     public Patio() {
     }
 
-    
-
     public Patio(int superficie, boolean tieneJuegos, boolean tieneCanchaFutbol, boolean tieneChanchaBasket, String nombre, String ubicacion) {
         super(nombre, ubicacion, true);
         this.superficie = superficie;
@@ -27,8 +26,6 @@ public class Patio extends EspacioEscolar{
         this.tieneCanchaFutbol = tieneCanchaFutbol;
         this.tieneChanchaBasket = tieneChanchaBasket;
     }
-
-    
 
     public int getSuperficie() {
         return superficie;
@@ -86,9 +83,6 @@ public class Patio extends EspacioEscolar{
         this.habilitado = habilitado;
     }
     
-    
-     
-
     @Override
     void abrir() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -104,5 +98,9 @@ public class Patio extends EspacioEscolar{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    
+    @Override
+    public String descripcion() {
+        return "Patio: " + nombre + ", superficie: " + superficie + " m2";
+    }
+
 }

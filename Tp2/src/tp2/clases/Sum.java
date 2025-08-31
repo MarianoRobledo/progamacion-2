@@ -8,7 +8,7 @@ package tp2.clases;
  *
  * @author mariano-ubuntu
  */
-public class Sum extends EspacioEscolar{
+public class Sum extends EspacioEscolar {
     
     private int capacidad;
     private boolean tieneCalefaccion;
@@ -17,15 +17,12 @@ public class Sum extends EspacioEscolar{
     public Sum() {
     }
 
-    
     public Sum(int capacidad, boolean tieneCalefaccion, boolean tieneProyector, String nombre, String ubicacion) {
         super(nombre, ubicacion, true);
         this.capacidad = capacidad;
         this.tieneCalefaccion = tieneCalefaccion;
         this.tieneProyector = tieneProyector;
     }
-
-    
 
     public int getCapacidad() {
         return capacidad;
@@ -75,8 +72,6 @@ public class Sum extends EspacioEscolar{
         this.habilitado = habilitado;
     }
     
-    
-    
     public void realizarActo(){
         
     }
@@ -103,5 +98,10 @@ public class Sum extends EspacioEscolar{
     void limpiar() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
+    @Override
+    public String descripcion() {
+        return "SUM: " + nombre + ", capacidad: " + capacidad;
+    }
+
 }

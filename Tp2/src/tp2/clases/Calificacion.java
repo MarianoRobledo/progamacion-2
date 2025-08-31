@@ -13,6 +13,8 @@ public class Calificacion {
     private int legajo;
     private Materia materia;
     private int valor;
+    private double nota;
+    private String nombreMateria;
 
     public Calificacion() {
     }
@@ -21,6 +23,12 @@ public class Calificacion {
         this.legajo = legajo;
         this.materia = materia;
         this.valor = valor;
+    }
+
+    // Constructor sobrecargado para métodos de Alumno
+    public Calificacion(double nota, String nombreMateria) {
+        this.nota = nota;
+        this.nombreMateria = nombreMateria;
     }
 
     public int getLegajo() {
@@ -46,7 +54,30 @@ public class Calificacion {
     public void setValor(int valor) {
         this.valor = valor;
     }
-    
-    
-    
+
+    public double getNota() {
+        return nota;
+    }
+
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public String getNombreMateria() {
+        return nombreMateria;
+    }
+
+    public void setNombreMateria(String nombreMateria) {
+        this.nombreMateria = nombreMateria;
+    }
+    @Override
+    public String toString() {
+        if (nombreMateria != null) {
+            return "Calificacion{" + "nota=" + nota + ", materia='" + nombreMateria + '\'' + '}';
+        } else if (materia != null) {
+            return "Calificacion{" + "valor=" + valor + ", materia=" + materia + '}';
+        } else {
+            return "Calificacion{}";
+        }
+    }
 }

@@ -18,7 +18,6 @@ public class Laboratorio extends EspacioEscolar{
 
     public Laboratorio() {
     }
-
    
     public Laboratorio(TipoLaboratorio tipo, String nombre, String ubicacion) {
         super(nombre, ubicacion, true);
@@ -78,7 +77,7 @@ public class Laboratorio extends EspacioEscolar{
         }
     }
         
-        @Override
+    @Override
     void abrir() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
@@ -93,6 +92,9 @@ public class Laboratorio extends EspacioEscolar{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    
+    @Override
+    public String descripcion() {
+        return "Laboratorio: " + nombre + ", tipo: " + tipo;
+    }    
     
 }
