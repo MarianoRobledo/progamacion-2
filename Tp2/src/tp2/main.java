@@ -49,7 +49,7 @@ public class main {
         // Probar métodos sobrecargados en Alumno
         alumno1.agregarCalificacion(10.0, "Matemática");
         alumno1.agregarCalificacion(8.5);
-        alumno1.agregarCalificacion(new tp2.clases.Calificacion(7.0, "Lengua"));
+        alumno1.agregarCalificacion(new Calificacion(7.0, "Lengua"));
 
         // Probar métodos sobrecargados en Docente
         int antiguedad1 = doc1.calcularAntiguedad();

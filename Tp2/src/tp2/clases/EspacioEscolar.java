@@ -8,7 +8,7 @@ package tp2.clases;
  *
  * @author mariano-ubuntu
  */
-abstract class EspacioEscolar {
+public abstract class EspacioEscolar {
     
     protected String nombre;
     protected String ubicacion;
