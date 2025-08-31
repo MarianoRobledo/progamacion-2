@@ -4,11 +4,14 @@
  */
 package tp2;
 
+import java.util.ArrayList;
 import java.util.Date;
 import tp2.clases.Alumno;
 import tp2.clases.Aula;
+import tp2.clases.Calificacion;
 import tp2.clases.Director;
 import tp2.clases.Docente;
+import tp2.clases.EspacioEscolar;
 import tp2.clases.Laboratorio;
 import tp2.clases.Patio;
 import tp2.clases.Sum;
@@ -58,13 +61,13 @@ public class main {
         System.out.println("Antigüedad al 2025: " + antiguedad2);
 
         // Polimorfismo: colección de EspacioEscolar
-        java.util.ArrayList<tp2.clases.EspacioEscolar> espacios = new java.util.ArrayList<>();
+        ArrayList<EspacioEscolar> espacios = new ArrayList<>();
         espacios.add(aula1);
         espacios.add(lab1);
         espacios.add(p1);
         espacios.add(s1);
 
-        for (tp2.clases.EspacioEscolar esp : espacios) {
+        for (EspacioEscolar esp : espacios) {
             System.out.println(esp.descripcion());
         }
     }
