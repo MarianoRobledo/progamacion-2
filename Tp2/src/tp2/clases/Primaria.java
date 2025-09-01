@@ -23,13 +23,7 @@ public class Primaria extends Escuela{
     public Primaria() {
     }
 
-    public Primaria(Director director, List<Docente> docentes, List<Alumno> alumnos, List<Materia> materias, List<Curso> cursos) {
-        this.director = director;
-        this.docentes = docentes;
-        this.alumnos = alumnos;
-        this.materias = materias;
-        this.cursos = cursos;
-    }
+   
 
     public Primaria(Director director, String nombre, int numeroEscuela, String direccion, String email) {
         super(nombre, numeroEscuela, direccion, email);
@@ -202,6 +196,29 @@ public class Primaria extends Escuela{
         for (Alumno alumno : this.alumnos) {
             System.out.println(alumno.toString());
         }
+    }
+    
+    public void agregarDocente(Docente docente){
+        this.docentes.add(docente);
+    }
+    
+    public void quitarDocente(int legajo){
+        Iterator<Docente> itDocente = this.docentes.iterator();
+        boolean flag=true;
+        
+        while(itDocente.hasNext()){
+            
+            if(itDocente.next().getLegajo()==legajo){
+                itDocente.remove();
+                System.out.println("Se elimino");
+                flag=false;
+                break;
+            }
+        }
+        if(flag){
+            System.out.println("No se encontro el legajo: "+legajo);
+        }
+                
     }
     
     public void listarDocentes(){

@@ -110,7 +110,8 @@ public class Docente extends Persona{
 
     @Override
     public String toString() {
-        return "Docente{" + "legajo=" + legajo + ", especialida=" + especialida + ", fechaInicioCargo=" + fechaInicioCargo + '}';
+        return "Docente{nombre= " + this.nombre + ", apellido= " + apellido + ", dni= " + dni + ", " + "legajo= " + legajo + ", especialidad= " + especialida +'}';
     }
-    
+
+   
 }

@@ -14,6 +14,7 @@ import tp2.clases.Docente;
 import tp2.clases.EspacioEscolar;
 import tp2.clases.Laboratorio;
 import tp2.clases.Patio;
+import tp2.clases.Primaria;
 import tp2.clases.Sum;
 import tp2.clases.TipoLaboratorio;
 
@@ -41,19 +42,42 @@ public class main {
 
         Director d1 = new Director(1234, new Date(2000, 1, 12), "Marcelo", "Rodrigez", 1234, new Date(1985, 1, 12), "Floresta", "2635644");
         Docente doc1 = new Docente(14778, "Matematica", new Date(2000, 1, 12), "Maria", "Gonzalez", 14778, new Date(2000, 1, 12), "Mendoza", "2644666");
-        Docente doc2 = new Docente(15555, "Matematica", new Date(2000, 1, 12), "Marcos", "Perez", 15555, new Date(2000, 1, 12), "Mendoza", "2644666");
-        Docente doc3 = new Docente(17777, "Matematica", new Date(2000, 1, 12), "Carlos", "Gaviola", 17777, new Date(2000, 1, 12), "Mendoza", "2644666");
-        Docente doc4 = new Docente(18888, "Matematica", new Date(2000, 1, 12), "Esteban", "Fernandez", 18888, new Date(2000, 1, 12), "Mendoza", "2644666");
-        Docente doc5 = new Docente(19999, "Matematica", new Date(2000, 1, 12), "Brisa", "Olivares", 19999, new Date(2000, 1, 12), "Mendoza", "2644666");
+        Docente doc2 = new Docente(15555, "Lenguas", new Date(2000, 1, 12), "Marcos", "Perez", 15555, new Date(2000, 1, 12), "Mendoza", "2644666");
+        Docente doc3 = new Docente(17777, "Cs. Naturales", new Date(2000, 1, 12), "Carlos", "Gaviola", 17777, new Date(2000, 1, 12), "Mendoza", "2644666");
+        Docente doc4 = new Docente(18888, "Fisica", new Date(2000, 1, 12), "Esteban", "Fernandez", 18888, new Date(2000, 1, 12), "Mendoza", "2644666");
+        Docente doc5 = new Docente(19999, "Termodinamica", new Date(2000, 1, 12), "Brisa", "Olivares", 19999, new Date(2000, 1, 12), "Mendoza", "2644666");
 
         Alumno alumno1 = new Alumno(2000, "Juan", "Perez", 2000, new Date(2000, 1, 12), "mendoza", "262334");
         Alumno alumno2 = new Alumno(2111, "Abril", "Gomez", 2001, new Date(2001, 2, 10), "mendoza", "262335");
-
+        
+        Primaria primaria = new Primaria(d1, "Nacional", 1920, "Mendoza", "nacional@mendoza.edu.ar");
+        
+        primaria.agregarDocente(doc1);
+        primaria.agregarDocente(doc2);
+        primaria.agregarDocente(doc3);
+        primaria.agregarDocente(doc4);
+        primaria.agregarDocente(doc5);
+        
+        primaria.inscribirAlumno(alumno1);
+        primaria.inscribirAlumno(alumno2);
+        
+        // Probamos el metodo listarDocentes de la clase Primaria        
+        primaria.listarDocentes();
+        
+        
+        // Probar Getters y Setters
+        System.out.println("El apellido del alumno1: "+alumno1.getApellido());
+        System.out.println("Se cambiara por Gonzalez");
+        alumno1.setApellido("Gonzalez");
+        System.out.println("El nuevo apellido del alumno1: "+alumno1.getApellido());
+        
+        
         // Probar métodos sobrecargados en Alumno
         alumno1.agregarCalificacion(10.0, "Matemática");
         alumno1.agregarCalificacion(8.5);
         alumno1.agregarCalificacion(new Calificacion(7.0, "Lengua"));
-
+        
+        System.out.println("----------------------");
         // Probar métodos sobrecargados en Docente
         int antiguedad1 = doc1.calcularAntiguedad();
         int antiguedad2 = doc1.calcularAntiguedad(new Date(2025, 1, 1));
