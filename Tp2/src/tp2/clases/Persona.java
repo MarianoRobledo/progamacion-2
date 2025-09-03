@@ -4,7 +4,7 @@
  */
 package tp2.clases;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -15,11 +15,11 @@ abstract class Persona {
     protected String nombre;
     protected String apellido;
     protected int dni;
-    protected Date fechaNacimiento;
+    protected LocalDate fechaNacimiento;
     protected String direccion;
     protected String telefono;
 
-    public Persona(String nombre, String apellido, int dni, Date fechaNacimiento, String direccion, String telefono) {
+    public Persona(String nombre, String apellido, int dni, LocalDate fechaNacimiento, String direccion, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -33,10 +33,4 @@ abstract class Persona {
         return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", telefono=" + telefono + '}';
     }
 
-
-
-    
-    
-    
-    
 }

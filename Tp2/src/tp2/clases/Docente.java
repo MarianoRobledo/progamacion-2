@@ -4,7 +4,8 @@
  */
 package tp2.clases;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 
 /**
  *
@@ -14,9 +15,9 @@ public class Docente extends Persona{
     
     private int legajo;
     private String especialida;
-    private Date fechaInicioCargo;
+    private LocalDate fechaInicioCargo;
 
-    public Docente(int legajo, String especialida, Date fechaInicioCargo, String nombre, String apellido, int dni, Date fechaNacimiento, String direccion, String telefono) {
+    public Docente(int legajo, String especialida, LocalDate fechaInicioCargo, String nombre, String apellido, int dni, LocalDate fechaNacimiento, String direccion, String telefono) {
         super(nombre, apellido, dni, fechaNacimiento, direccion, telefono);
         this.legajo = legajo;
         this.especialida = especialida;
@@ -39,11 +40,11 @@ public class Docente extends Persona{
         this.especialida = especialida;
     }
 
-    public Date getFechaInicioCargo() {
+    public LocalDate getFechaInicioCargo() {
         return fechaInicioCargo;
     }
 
-    public void setFechaInicioCargo(Date fechaInicioCargo) {
+    public void setFechaInicioCargo(LocalDate fechaInicioCargo) {
         this.fechaInicioCargo = fechaInicioCargo;
     }
 
@@ -71,11 +72,11 @@ public class Docente extends Persona{
         this.dni = dni;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -97,15 +98,14 @@ public class Docente extends Persona{
 
     // Métodos sobrecargados
     public int calcularAntiguedad() {
-        // Retorna años de antigüedad desde fechaInicioCargo hasta hoy
-        Date hoy = new Date();
-        long diff = hoy.getTime() - fechaInicioCargo.getTime();
-        return (int) (diff / (1000L * 60 * 60 * 24 * 365));
+        LocalDate hoy = LocalDate.now();
+        Period periodo = Period.between(fechaInicioCargo, hoy);
+        return Math.max(periodo.getYears(), 0);
     }
 
-    public int calcularAntiguedad(Date fechaReferencia) {
-        long diff = fechaReferencia.getTime() - fechaInicioCargo.getTime();
-        return (int) (diff / (1000L * 60 * 60 * 24 * 365));
+    public int calcularAntiguedad(LocalDate fechaReferencia) {
+        Period periodo = Period.between(fechaInicioCargo, fechaReferencia);
+        return Math.max(periodo.getYears(), 0);
     }
 
     @Override
@@ -113,5 +113,4 @@ public class Docente extends Persona{
         return "Docente{nombre= " + this.nombre + ", apellido= " + apellido + ", dni= " + dni + ", " + "legajo= " + legajo + ", especialidad= " + especialida +'}';
     }
 
-   
 }

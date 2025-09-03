@@ -4,6 +4,7 @@
  */
 package tp2.clases;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Alumno extends Persona {
     private int legajo;
     private List<Calificacion> calificaciones;
 
-    public Alumno(int legajo, String nombre, String apellido, int dni, Date fechaNacimiento, String direccion, String telefono) {
+    public Alumno(int legajo, String nombre, String apellido, int dni, LocalDate fechaNacimiento, String direccion, String telefono) {
         super(nombre, apellido, dni, fechaNacimiento, direccion, telefono);
         this.legajo = legajo;
         this.calificaciones = new ArrayList<Calificacion>();
@@ -63,11 +64,11 @@ public class Alumno extends Persona {
         this.dni = dni;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

@@ -4,6 +4,7 @@
  */
 package tp2.clases;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -13,9 +14,9 @@ import java.util.Date;
 public class Director extends Persona{
     
     private int legajo;
-    private Date fechaInicioCargo;
+    private LocalDate fechaInicioCargo;
 
-    public Director(int legajo, Date fechaInicioCargo, String nombre, String apellido, int dni, Date fechaNacimiento, String direccion, String telefono) {
+    public Director(int legajo, LocalDate fechaInicioCargo, String nombre, String apellido, int dni, LocalDate fechaNacimiento, String direccion, String telefono) {
         super(nombre, apellido, dni, fechaNacimiento, direccion, telefono);
         this.legajo = legajo;
         this.fechaInicioCargo = fechaInicioCargo;
@@ -29,11 +30,11 @@ public class Director extends Persona{
         this.legajo = legajo;
     }
 
-    public Date getFechaInicioCargo() {
+    public LocalDate getFechaInicioCargo() {
         return fechaInicioCargo;
     }
 
-    public void setFechaInicioCargo(Date fechaInicioCargo) {
+    public void setFechaInicioCargo(LocalDate fechaInicioCargo) {
         this.fechaInicioCargo = fechaInicioCargo;
     }
 
@@ -61,11 +62,11 @@ public class Director extends Persona{
         this.dni = dni;
     }
 
-    public Date getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
@@ -93,9 +94,5 @@ public class Director extends Persona{
     public String toString() {
         return "Director{" + "legajo=" + legajo + ", fechaInicioCargo=" + fechaInicioCargo + '}';
     }
-    
-    
-    
-    
     
 }
