@@ -49,7 +49,7 @@ public class Tarea {
 
     @Override
     public String toString() {
-        return "Tarea{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", completada=" + completada + '}';
+        return "Tarea {" + "nombre: " + nombre + ", descripcion: " + descripcion + ", completada: " + completada + '}';
     }
     
     

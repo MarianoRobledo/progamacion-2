@@ -4,6 +4,8 @@
  */
 package tp3;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import tp3.modelo.ListaTareas;
@@ -17,9 +19,12 @@ public class Tp3 {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.UnsupportedEncodingException
      */
-    public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
+        
+        // Scanner read = new Scanner(System.in);
         Tarea t1 = new Tarea("Hacer cama", "Hacer cama");
         Tarea t2 = new Tarea("Lavar baño", "Lavar baño");
         Tarea t3 = new Tarea("Hacer comida", "Hacer comida");
@@ -28,38 +33,44 @@ public class Tp3 {
         Tarea t6 = new Tarea("Cocinar", "Cocinar");
 
         ListaTareas list = new ListaTareas();
-        list.agregarTareas(t1);
-        list.agregarTareas(t2);
-        list.agregarTareas(t3);
-        list.agregarTareas(t4);
-        list.agregarTareas(t5);
-        list.agregarTareas(t6);
+        list.agregarTarea(t1);
+        list.agregarTarea(t2);
+        list.agregarTarea(t3);
+        list.agregarTarea(t4);
+        list.agregarTarea(t5);
+        list.agregarTarea(t6);
         
         System.out.println("---------------");
-        list.mostraTarea();
+        System.out.println("1. Agregamos las siguientes 6 tareas a la lista:");
+        list.mostrarTareas();
         System.out.println("---------------");
+        System.out.println("2. Comprobamos si la lista contiene la tarea 'Lavar baño':");
         System.out.println(list.contieneTarea(t2));
         System.out.println("---------------");
+        System.out.println("3. Probamos obtener la tarea 'Hacer cama' por su nombre:");
         System.out.println(list.obtenerTarea("Hacer cama"));
         System.out.println("---------------");
-        System.out.println("Eliminar t5");
+        System.out.println("4. Eliminamos la tarea 'Estudiar' pasando su objeto Tarea correspondiente,");
         list.eliminarTarea(t5);
+        System.out.println("y verificamos que efectivamente se eliminó:");
+        list.mostrarTareas();
         System.out.println("---------------");
-        list.mostraTarea();
-        System.out.println("---------------");
-        System.out.println("Eliminar indice 0");
+        System.out.println("5. Luego eliminamos la tarea 'Hacer cama' según su índice (0),");
         list.eliminarTarea(0);
+        System.out.println("y verificamos que efectivamente se eliminó:");
+        list.mostrarTareas();
         System.out.println("---------------");
-        System.out.println("Clonar Lista");
-        ArrayList<Tarea> listaTareaCLonada = (ArrayList<Tarea>) list.clonarLista();
-        ListaTareas list1 = new ListaTareas(listaTareaCLonada);
-        System.out.println("---------------");
-        System.out.println("Vaciar y corroborar si esta vacia");
-        list.limpiarTarea();
+        System.out.println("6. Ahora clonamos la lista en su estado actual,");
+        ArrayList<Tarea> listaTareaClonada = (ArrayList<Tarea>) list.clonarLista();
+        ListaTareas list1 = new ListaTareas(listaTareaClonada);
+        System.out.println("vaciamos la lista original,");
+        list.limpiarLista();
+        System.out.println("y verificamos que efectivamente la lista original está vacía:");
         System.out.println(list.estaVacia());
         System.out.println("---------------");
-        System.out.println("Mostrar elementos de la lista clonada");
-        list1.mostraTarea();
+        System.out.println("7. La lista previamente clonada, sin embargo, se mantiene sin modificaciones:");
+        list1.mostrarTareas();
+        System.out.println("");
         
         
         

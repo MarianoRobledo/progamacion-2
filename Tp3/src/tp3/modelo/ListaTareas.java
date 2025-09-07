@@ -23,9 +23,8 @@ public class ListaTareas {
     public ListaTareas(ArrayList<Tarea> tareas) {
         this.tareas = tareas;
     }
-    
 
-    public void agregarTareas(Tarea tarea) {
+    public void agregarTarea(Tarea tarea) {
         try {
             tareas.add(tarea);
         } catch (Exception e) {
@@ -35,7 +34,7 @@ public class ListaTareas {
 
     }
 
-    public void mostraTarea() {
+    public void mostrarTareas() {
         for (Tarea tarea : tareas) {
             System.out.println(tarea.toString());
         }
@@ -66,10 +65,10 @@ public class ListaTareas {
         try {
             devolver = tareas.get(index);
         } catch (Exception e) {
-            System.out.println("Fuera de indice");
+            System.out.println("Índice fuera de rango");
         }
         if (devolver == null) {
-            System.out.println("No se encontro la tarea");
+            System.out.println("No se encontró la tarea");
             return null;
         } else {
             return devolver;
@@ -88,7 +87,7 @@ public class ListaTareas {
         return flag;
     }
 
-    public int indeceTarea(Tarea tarea) {
+    public int indiceTarea(Tarea tarea) {
         int res = -1;
         try {
             res = tareas.indexOf(tarea);
@@ -96,7 +95,7 @@ public class ListaTareas {
             System.out.println("Tiene que ser una tarea");
         }
         if (res == -1) {
-            System.out.println("No se encontro tarea");
+            System.out.println("No se encontro la tarea");
             return res;
         } else {
             return res;
@@ -121,7 +120,7 @@ public class ListaTareas {
     public void eliminarTarea(int indice) {
         try {
             if (indice > tareas.size()) {
-                System.out.println("Indice mas grande que elementos, no se puede");
+                System.out.println("Índice fuera de rango");
             } else {
                 Iterator<Tarea> itTareas = tareas.iterator();
                 while (itTareas.hasNext()) {
@@ -139,7 +138,7 @@ public class ListaTareas {
         }
     }
 
-    public void limpiarTarea() {
+    public void limpiarLista() {
         tareas.clear();
     }
 
