@@ -4,6 +4,7 @@
  */
 package tp4;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -49,10 +50,11 @@ public class Empleado {
         this.telefono = telefono;
     }
     
-    public void registrarVenta(Cliente cliente){
-        Venta venta = new Venta(new Date(), cliente);
-        venta.agregarNeumaticos(new Neumatico);
+    public void registrarVenta(Cliente cliente, int cantidadNeumaticos){
+        Venta venta = new Venta(new Date(), cliente,cantidadNeumaticos);
+        venta.registrarVenta();
         cliente.agregarCompra(venta);
+        
     }
     
 }

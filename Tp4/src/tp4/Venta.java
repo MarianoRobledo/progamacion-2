@@ -12,19 +12,19 @@ import java.util.Date;
  * @author mariano-ubuntu
  */
 public class Venta {
-    
+
     private Date fecha;
     private Cliente cliente;
     private Factura factura;
-    private ArrayList<Neumatico> neumaticos;
+    private int cantidadNeumaticos;
 
     public Venta() {
     }
 
-    public Venta(Date fecha, Cliente cliente) {
+    public Venta(Date fecha, Cliente cliente, int cantidadNeumaticos) {
         this.fecha = fecha;
         this.cliente = cliente;
-        this.neumaticos = new ArrayList<Neumatico>();
+        this.cantidadNeumaticos = cantidadNeumaticos;
     }
 
     public Date getFecha() {
@@ -51,31 +51,25 @@ public class Venta {
         this.factura = factura;
     }
 
-    public ArrayList<Neumatico> getNeumaticos() {
-        return neumaticos;
+    public int getCantidadNeumaticos() {
+        return cantidadNeumaticos;
     }
 
-    public void setNeumaticos(ArrayList<Neumatico> neumaticos) {
-        this.neumaticos = neumaticos;
-    }
-    
-    public void agregarNeumaticos(Neumatico neumatico){
-        neumaticos.add(neumatico);        
+    public void setCantidadNeumaticos(int cantidadNeumaticos) {
+        this.cantidadNeumaticos = cantidadNeumaticos;
     }
 
-    
-    public void registrarVenta(){
-        
+    public void registrarVenta() {
+
+        this.factura = new Factura(cantidadNeumaticos);
+
     }
-    
-    
-    
+
     @Override
     public String toString() {
-        return "Venta{" + "fecha=" + fecha + ", cliente=" + cliente + ", factura=" + factura + ", neumaticos=" + neumaticos + '}';
+        return "Venta{" + "fecha=" + fecha + ", cliente=" + cliente + ", factura=" + factura + ", cantidadNeumaticos=" + cantidadNeumaticos + '}';
     }
+
     
-    
-    
-    
+
 }
