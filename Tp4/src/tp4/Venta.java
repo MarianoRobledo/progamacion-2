@@ -67,7 +67,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{" + "fecha=" + fecha + ", cliente=" + cliente + ", factura=" + factura + ", cantidadNeumaticos=" + cantidadNeumaticos + '}';
+        return "Venta{" + "fecha=" + fecha + ", cliente=" + cliente.getDni() + ", factura=" + factura ;
     }
 
     

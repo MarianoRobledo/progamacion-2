@@ -5,33 +5,36 @@
 package tp4;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
  * @author mariano-ubuntu
  */
 public class CasaNeumaticos {
-    
-    private int nombre;
+
+    private String nombre;
     private ArrayList<Cliente> clientes;
     private ArrayList<Empleado> empleados;
+    private ArrayList<Neumatico> neumaticos;
     private ArrayList<Provedor> provedores;
 
     public CasaNeumaticos() {
     }
 
-    public CasaNeumaticos(int nombre) {
+    public CasaNeumaticos(String nombre) {
         this.nombre = nombre;
         this.clientes = new ArrayList<Cliente>();
         this.empleados = new ArrayList<Empleado>();
+        this.neumaticos = new ArrayList<Neumatico>();
         this.provedores = new ArrayList<Provedor>();
     }
 
-    public int getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -59,12 +62,32 @@ public class CasaNeumaticos {
         this.provedores = provedores;
     }
 
+    public ArrayList<Neumatico> getNeumaticos() {
+        return neumaticos;
+    }
+
+    public void setNeumaticos(ArrayList<Neumatico> neumaticos) {
+        this.neumaticos = neumaticos;
+    }
+    
+    public void agregarEmpleado(Empleado empleado){
+        empleados.add(empleado);
+    }
+    
+    public void eliminarEmpleado(int id){
+        Iterator<Empleado> it = empleados.iterator();
+        
+        while(it.hasNext()){
+            if(it.next().getId()==id){
+                it.remove();
+            }
+        }
+        
+    }
+
     @Override
     public String toString() {
         return "CasaNeumaticos{" + "nombre=" + nombre + ", clientes=" + clientes + ", empleados=" + empleados + ", provedores=" + provedores + '}';
     }
-    
-    
-    
-    
+
 }

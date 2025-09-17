@@ -11,12 +11,12 @@ package tp4;
 public class Factura {
     
     private int total;
+    
+    public Factura() {
+    }
 
     public Factura(int total) {
         this.total = total;
-    }
-
-    public Factura() {
     }
 
     public int getTotal() {

@@ -16,9 +16,9 @@ public class Provedor {
     public Provedor() {
     }
 
-    public Provedor(String razonSocial, Neumatico neumatico) {
+    public Provedor(String razonSocial ) {
         this.razonSocial = razonSocial;
-        this.neumatico = neumatico;
+        
     }
 
     public String getRazonSocial() {
